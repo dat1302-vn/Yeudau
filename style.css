@@ -1,0 +1,525 @@
+
+/* ================================
+   CÀI ĐẶT CHUNG
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff758c,
+            #ff7eb3,
+            #ff9a9e,
+            #fad0c4
+        );
+
+    color: white;
+}
+
+
+/* ================================
+   KHUNG WEBSITE
+================================ */
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* ================================
+   CÁC MÀN HÌNH
+================================ */
+
+.screen {
+    width: 100%;
+    max-width: 650px;
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    border-radius: 30px;
+
+    backdrop-filter: blur(15px);
+
+    -webkit-backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25);
+
+    display: none;
+
+    animation: showScreen 0.8s ease;
+}
+
+
+/* Màn hình đang hiển thị */
+
+.screen.active {
+    display: block;
+}
+
+
+/* ================================
+   TIÊU ĐỀ
+================================ */
+
+h1 {
+    font-size: 38px;
+
+    margin-bottom: 20px;
+
+    line-height: 1.3;
+
+    text-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+
+h2 {
+    font-size: 25px;
+
+    margin: 15px 0;
+}
+
+
+/* ================================
+   ĐOẠN VĂN
+================================ */
+
+p {
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    margin: 12px 0;
+}
+
+
+/* ================================
+   TRÁI TIM LỚN
+================================ */
+
+.heart-big {
+    font-size: 90px;
+
+    margin-bottom: 15px;
+
+    animation: heartbeat 1.4s infinite;
+}
+
+
+/* ================================
+   TÊN HOÀI NHI
+================================ */
+
+.name {
+    font-size: 36px;
+
+    font-weight: bold;
+
+    margin: 25px 0;
+
+    color: white;
+
+    animation: glow 1.5s infinite alternate;
+}
+
+
+/* ================================
+   NÚT BẤM
+================================ */
+
+button {
+    border: none;
+
+    outline: none;
+
+    padding: 15px 30px;
+
+    margin-top: 25px;
+
+    border-radius: 50px;
+
+    background: white;
+
+    color: #ff4f70;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.2);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+button:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+button:active {
+    transform: scale(0.95);
+}
+
+
+/* ================================
+   MÀN HÌNH TỎ TÌNH
+================================ */
+
+.big-love {
+    font-size: 100px;
+
+    animation: heartbeat 1s infinite;
+}
+
+
+.love-title {
+    font-size: 55px;
+
+    letter-spacing: 4px;
+
+    margin-top: 10px;
+
+    color: white;
+
+    animation:
+        loveGlow 1.5s infinite alternate;
+}
+
+
+.love-text {
+    font-size: 18px;
+
+    margin: 15px 0;
+}
+
+
+/* ================================
+   LỜI NHẮN
+================================ */
+
+.final-message {
+    margin-top: 25px;
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.2);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.3);
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    line-height: 1.5;
+}
+
+
+/* ================================
+   NHÓM NÚT
+================================ */
+
+.buttons {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+
+/* Nút suy nghĩ */
+
+.no-button {
+    color: #777;
+
+    background: rgba(255, 255, 255, 0.8);
+}
+
+
+/* ================================
+   MÀN HÌNH CUỐI
+================================ */
+
+.celebration {
+    font-size: 70px;
+
+    margin-bottom: 15px;
+
+    animation: bounce 1s infinite;
+}
+
+
+.big-heart {
+    font-size: 100px;
+
+    margin: 20px;
+
+    animation: heartbeat 1s infinite;
+}
+
+
+.signature {
+    margin-top: 25px;
+
+    font-style: italic;
+
+    font-size: 17px;
+}
+
+
+/* ================================
+   TRÁI TIM BAY
+================================ */
+
+.heart {
+    position: fixed;
+
+    bottom: -60px;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    animation:
+        floatUp linear forwards;
+}
+
+
+/* ================================
+   ANIMATION
+================================ */
+
+@keyframes showScreen {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes heartbeat {
+
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.15);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+
+    60% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+@keyframes glow {
+
+    from {
+        text-shadow:
+            0 0 5px white,
+            0 0 10px white;
+    }
+
+    to {
+        text-shadow:
+            0 0 15px white,
+            0 0 35px white;
+    }
+}
+
+
+@keyframes loveGlow {
+
+    from {
+        text-shadow:
+            0 0 10px white;
+    }
+
+    to {
+        text-shadow:
+            0 0 20px white,
+            0 0 40px white,
+            0 0 60px #ff1744;
+    }
+}
+
+
+@keyframes floatUp {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+
+/* ================================
+   ĐIỆN THOẠI
+================================ */
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 15px;
+    }
+
+
+    .screen {
+        padding: 35px 20px;
+
+        border-radius: 25px;
+    }
+
+
+    h1 {
+        font-size: 28px;
+    }
+
+
+    h2 {
+        font-size: 22px;
+    }
+
+
+    p {
+        font-size: 16px;
+    }
+
+
+    .heart-big {
+        font-size: 70px;
+    }
+
+
+    .name {
+        font-size: 28px;
+    }
+
+
+    .big-love {
+        font-size: 75px;
+    }
+
+
+    .love-title {
+        font-size: 38px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .final-message {
+        font-size: 17px;
+
+        padding: 15px;
+    }
+
+
+    button {
+        font-size: 16px;
+
+        padding: 13px 24px;
+    }
+
+
+    .celebration {
+        font-size: 55px;
+    }
+
+
+    .big-heart {
+        font-size: 75px;
+    }
+
+}
